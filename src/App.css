@@ -1,0 +1,20 @@
+.App {
+  text-align: center;
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(34, 34, 34);
+}
+
+.App-logo {
+  height: 8vmin;
+  pointer-events: none;
+}
+
+.TextField {
+  padding: 20px;
+}
