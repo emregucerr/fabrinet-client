@@ -24,7 +24,7 @@ function Navbar({ handlePageSelection, selectedPage, access }) {
           className={getButtonClasses(1)}
           onClick={() => handlePageSelection(1)}
         >
-          <h4>Shipments</h4>
+          <h4>Shipments </h4>
         </div>
         <div
           className={getButtonClasses(2)}
