@@ -34,4 +34,4 @@ jobs:
         sleep 10  # Gives your app some time to start
 
     - name: Run fumetest_cli using npx
-      run: npx fumetest_cli run --url http://localhost:3000 --project-id 64de744ee1bc97a5699fe6e8 --timeout 900
+      run: npx fumetest_cli run --url http://localhost:3000 --project-id 64de744ee1bc97a5699fe6e8 --timeout 900 --username Github Bot
