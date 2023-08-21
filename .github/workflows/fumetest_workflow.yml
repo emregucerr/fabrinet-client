@@ -28,12 +28,10 @@ jobs:
       run: |
         npm install  # or appropriate install command for your app
 
-    - name: Start web app and determine port
+    - name: Start web app
       run: |
-        npm start &  # This assumes your app logs the port to console
-        sleep 10  # Give it some time to start and log
-        port=$(grep -oP 'Server started on port \K\d+' logfile)  # Replace logfile with the actual log file or output
-        echo "PORT=$port" >> $GITHUB_ENV
-      
+        npm start &  # Starts your app in the background
+        sleep 10  # Gives your app some time to start
+
     - name: Run fumetest_cli using npx
-      run: npx fumetest_cli run --url http://localhost:${{ env.PORT }} --project-id 64de744ee1bc97a5699fe6e8 --timeout 900
+      run: npx fumetest_cli run --url http://localhost:3000 --project-id 64de744ee1bc97a5699fe6e8 --timeout 900
