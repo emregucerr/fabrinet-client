@@ -17,12 +17,6 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: '20'
-
-    - name: Print working directory
-      run: pwd
-
-    - name: List directory contents
-      run: ls -al
         
     - name: Install app dependencies
       run: |
@@ -34,4 +28,4 @@ jobs:
         sleep 10  # Gives your app some time to start
 
     - name: Run fumetest_cli using npx
-      run: npx fumetest_cli run --url http://localhost:3000 --project-id 64de744ee1bc97a5699fe6e8 --timeout 900 --username Github Bot
+      run: npx fumetest_cli run --url http://localhost:3000 --project-id 64de744ee1bc97a5699fe6e8 --timeout 900 --username github_bot
