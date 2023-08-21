@@ -1,0 +1,33 @@
+name: Run fumetest_cli
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  run-cli:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'
+        
+    - name: Install app dependencies
+      run: |
+        cd fabrinet-client
+        npm install  # or appropriate install command for your app
+
+    - name: Start web app
+      run: |
+        cd fabrinet-client
+        npm start &  # Starts your app in the background
+        sleep 10  # Gives your app some time to start
+
+    - name: Run fumetest_cli using npx
+      run: npx fumetest_cli run --url http://localhost:PORT --project-id 64de744ee1bc97a5699fe6e8 --timeout 900
